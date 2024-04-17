@@ -5,7 +5,7 @@ void Main_Readme_Examples();
 
 int main()
 {
-	Main_Docs_Demos();
+	//Main_Docs_Demos();
 	//Main_Readme_Examples();
-	//Main_Docs_Examples();
+	Main_Docs_Examples();
 }

@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Vector.h"
 #include "base/Matrix.h"
@@ -17,7 +17,7 @@
 #include "algorithms/FunctionAnalyzers.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 using namespace std;
 
 // TODO - naci skup  kompleksnijih funkcija, npr. sin(x) + cos(x) + exp(x) + x^2 + x^3, u intervalu -10, 10
@@ -32,8 +32,8 @@ Real test_func(const Real x)
 
 void CreateInterpolatedValues(RealFunction f, Real x1, Real x2, int numPnt, Vector<Real> &outX, Vector<Real> &outY)
 {
-    outX.Resize(numPnt);
-    outY.Resize(numPnt);
+    outX.resize(numPnt);
+    outY.resize(numPnt);
 
     for (int i=0;i<numPnt;i++) {
         outX[i] = x1 + i * (x2 - x1) / (numPnt - 1);

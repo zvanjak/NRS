@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/Function.h"
 #include "core/FunctionHelpers.h"
@@ -12,7 +12,7 @@
 #endif
 
 
-using namespace MML;
+using namespace NRS;
 
 void Readme_deriving_functions()
 {
@@ -73,11 +73,11 @@ void Readme_Derivation_precision()
 
 		double exact_der = f_der(x);
 
-		double num_der1 = MML::Derivation::NDer1(f, x);
-		double num_der2 = MML::Derivation::NDer2(f, x);
-		double num_der4 = MML::Derivation::NDer4(f, x);
-		double num_der6 = MML::Derivation::NDer6(f, x);
-		double num_der8 = MML::Derivation::NDer8(f, x);
+		double num_der1 = NRS::Derivation::NDer1(f, x);
+		double num_der2 = NRS::Derivation::NDer2(f, x);
+		double num_der4 = NRS::Derivation::NDer4(f, x);
+		double num_der6 = NRS::Derivation::NDer6(f, x);
+		double num_der8 = NRS::Derivation::NDer8(f, x);
 
 		double err1 = num_der1 - exact_der;
 		double err2 = num_der2 - exact_der;
@@ -199,9 +199,9 @@ void Readme_Integration_precision()
 
 		double integral = f_int(x) - f_int(x1);
 
-		double int_trap = MML::IntegrateTrap(f, x1, x, 1e-3);
-		double int_simp = MML::IntegrateSimpson(f, x1, x, 1e-3);
-		double int_romb = MML::IntegrateRomberg(f, x1, x);
+		double int_trap = NRS::IntegrateTrap(f, x1, x, 1e-3);
+		double int_simp = NRS::IntegrateSimpson(f, x1, x, 1e-3);
+		double int_romb = NRS::IntegrateRomberg(f, x1, x);
 
 		double err1 = int_trap - integral;
 		double err2 = int_simp - integral;

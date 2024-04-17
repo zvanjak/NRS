@@ -1,14 +1,14 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/InterpolatedFunction.h"
 #include "core/Serializer.h"
 #include "core/Visualizer.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 void Docs_Demo_Interpolating_Real_function1_equally_spaced()
 {
@@ -72,7 +72,7 @@ void Docs_Demo_Interpolating_Real_function3()
   Serializer::SaveRealFuncEquallySpacedDetailed, (x1, x2, 100, "..\\..\\results\\docs_demo_interp_spline_5_pnt.txt");
   Serializer::SaveRealFuncEquallySpacedDetailed(f_baryrat, "docs_demo_interp_baryrat_5_pnt", x1, x2, 100, "..\\..\\results\\docs_demo_interp_baryrat_5_pnt.txt");
 
-  const char* cmd = "..\\..\\tools\\visualizers\\real_function_visualizer\\MML_RealFunctionVisualizer.exe"
+  const char* cmd = "..\\..\\tools\\visualizers\\real_function_visualizer\\NRS_RealFunctionVisualizer.exe"
     " ..\\..\\results\\docs_demo_interp_test_func.txt"
     " ..\\..\\results\\docs_demo_interp_linear_5_pnt.txt"
     " ..\\..\\results\\docs_demo_interp_polynom_5_pnt.txt"
@@ -117,15 +117,15 @@ void Docs_Demo_Interpolating_Scalar_function2()
 
   BilinInterpScalarFunction2D	f_bilin(x1v, x2v, ym);
 
-	//Visualizer::VisualizeScalarFunc2DCartesian(f_bilin, "docs_dmos_surface1", -5.0, 5.0, 11, -5.0, 5.0, 11, "docs_dmos_surface1.txt");
+	//Visualizer::VisualizeScalarFunc2DCartesian(f_bilin, "docs_demos_surface1", -5.0, 5.0, 11, -5.0, 5.0, 11, "docs_demos_surface1.txt");
 
   PolynomInterpScalarFunction2D	f_poly(x1v, x2v, ym, 3, 3);
 
-  Visualizer::VisualizeScalarFunc2DCartesian(f_poly, "docs_dmos_surface2", -5.0, 5.0, 11, -5.0, 5.0, 11, "docs_dmos_surface2.txt");
+  Visualizer::VisualizeScalarFunc2DCartesian(f_poly, "docs_demos_surface2", -5.0, 5.0, 11, -5.0, 5.0, 11, "docs_demos_surface2.txt");
 
   SplineInterpScalarFunction2D	f_spline(x1v, x2v, ym);
 
-  //Visualizer::VisualizeScalarFunc2DCartesian(f_spline, "docs_dmos_surface3", -5.0, 5.0, 11, -5.0, 5.0, 11, "docs_dmos_surface3.txt");
+  //Visualizer::VisualizeScalarFunc2DCartesian(f_spline, "docs_demos_surface3", -5.0, 5.0, 11, -5.0, 5.0, 11, "docs_demos_surface3.txt");
 }
 
 void Docs_Demo_Interpolated_functions()

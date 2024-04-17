@@ -1,13 +1,13 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Polynom.h"
 #include "base/LinearFunctional.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - evaluate exp(x) series for matrix and compare with direct calculation
 void Demo_Polynom()
@@ -27,7 +27,7 @@ void Demo_Polynom()
 	ComplexPolynom p2({ 1, 2, 3, 4, 5 });
 
 	RealPolynom poly_real({ 1, 2, 3, 4, 5 });
-	ComplexPolynom poly_cmplx({ Complex(1,1), Complex(1,1) });
+	//ComplexPolynom poly_cmplx({ Complex(1,1), Complex(1,1) });
 	Matrix2Polynom poly_mat({ 1, 2, 3 });            // matrix polynomial of 3rd order
 
 	// I/O of polynomials
@@ -38,12 +38,12 @@ void Demo_Polynom()
 	std::cout << "pol_quartic   : " << pol_quartic << std::endl;
 	std::cout << "p2            : " << p2 << std::endl;
 	std::cout << "poly_real     : " << poly_real << std::endl;
-	std::cout << "poly_cmplx    : " << poly_cmplx << std::endl;
+	//std::cout << "poly_cmplx    : " << poly_cmplx << std::endl;
 	std::cout << "m2            : " << poly_mat << std::endl;
 
 	// Evaluation of polynomials
 	double  v = poly_real(5.0);
-	Complex q = poly_cmplx(Complex(2, 3));
+	//Complex q = poly_cmplx(Complex(2, 3));
 	MatrixNM<Real, 2, 2> m2_3 = poly_mat(MatrixNM<Real, 2, 2>({ 1, 2, 3, 4 }));     // evaluate the polynomial at the given matrix value
 
 	// in detail
@@ -65,9 +65,9 @@ void Demo_Polynom()
 	poly_real.Print(std::cout, 7, 3);
 
 	std::cout << "\nComplex polynom output:\n";
-	std::cout << poly_cmplx << std::endl;
-	std::cout << poly_cmplx.to_string(10, 5) << std::endl;
-	poly_cmplx.Print(std::cout, 7, 3);
+	//std::cout << poly_cmplx << std::endl;
+	//std::cout << poly_cmplx.to_string(10, 5) << std::endl;
+	//poly_cmplx.Print(std::cout, 7, 3);
 
 	std::cout << "\nReal matrix output:\n";
 	std::cout << poly_mat << std::endl;

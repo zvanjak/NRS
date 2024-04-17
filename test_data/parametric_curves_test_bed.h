@@ -1,14 +1,14 @@
-#if !defined MML_PARAMETRIC_CURVES_TEST_BED_H
-#define MML_PARAMETRIC_CURVES_TEST_BED_H
+#if !defined NRS_PARAMETRIC_CURVES_TEST_BED_H
+#define NRS_PARAMETRIC_CURVES_TEST_BED_H
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/VectorN.h"
 #include "core/Function.h"
 #endif
 
-namespace MML:: TestBeds
+namespace NRS:: TestBeds
 {
     // TODO 1.0 - add couple more curves
      struct TestSpaceCurve

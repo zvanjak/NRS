@@ -1,7 +1,7 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Vector.h"
 #include "base/MatrixBandDiag.h"
@@ -9,10 +9,10 @@
 #include "core/LinAlgEqSolvers.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 
-namespace MML::Tests::BandDiagMatrixTests
+namespace NRS::Tests::BandDiagMatrixTests
 {
     TEST_CASE("MatrixBandDiag_init_with_matrix", "[simple]") 
     {

@@ -1,8 +1,8 @@
-#if !defined __MML_LINEAR_ALG_EQ_SOLVERS_TEST_BED_H
-#define __MML_LINEAR_ALG_EQ_SOLVERS_TEST_BED_H
+#if !defined __NRS_LINEAR_ALG_EQ_SOLVERS_TEST_BED_H
+#define __NRS_LINEAR_ALG_EQ_SOLVERS_TEST_BED_H
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Matrix.h"
 #include "base/MatrixSym.h"
@@ -12,7 +12,7 @@
 #include "linear_alg_eq_systems_sym_defs.h"
 #include "linear_alg_eq_systems_complex_defs.h"
 
-namespace MML::TestBeds
+namespace NRS::TestBeds
 {
     // TODO - define 5 symmetric linear systems
     class TestLinearSystem
@@ -25,10 +25,10 @@ namespace MML::TestBeds
         VectorComplex _eigen_values;
         std::vector<VectorComplex> _eigen_vectors;
 
-        TestLinearSystem(int n, const MML::MatrixDbl &mat, const MML::VectorDbl &rhs, const MML::VectorDbl &sol, const MML::VectorComplex &eigen_values) : 
+        TestLinearSystem(int n, const NRS::MatrixDbl &mat, const NRS::VectorDbl &rhs, const NRS::VectorDbl &sol, const NRS::VectorComplex &eigen_values) : 
             _n(n), _mat(mat), _rhs(rhs), _sol(sol), _eigen_values(eigen_values)
         {}
-        TestLinearSystem(int n, const MML::MatrixDbl &mat, const MML::VectorDbl &rhs, const MML::VectorDbl &sol, const MML::VectorComplex &eigen_values, const std::vector<MML::VectorComplex> &eigen_vectors) : 
+        TestLinearSystem(int n, const NRS::MatrixDbl &mat, const NRS::VectorDbl &rhs, const NRS::VectorDbl &sol, const NRS::VectorComplex &eigen_values, const std::vector<NRS::VectorComplex> &eigen_vectors) : 
             _n(n), _mat(mat), _rhs(rhs), _sol(sol), _eigen_values(eigen_values), _eigen_vectors(eigen_vectors)
         {}
     };
@@ -41,7 +41,7 @@ namespace MML::TestBeds
         MatrixDbl _rhs;
         MatrixDbl _sol;
 
-        TestLinearSystemMultiRHS(int n, const MML::MatrixDbl &mat, const MML::MatrixDbl &rhs, const MML::MatrixDbl &sol) : 
+        TestLinearSystemMultiRHS(int n, const NRS::MatrixDbl &mat, const NRS::MatrixDbl &rhs, const NRS::MatrixDbl &sol) : 
             _n(n), _mat(mat), _rhs(rhs), _sol(sol)
         {}
     };    
@@ -56,10 +56,10 @@ namespace MML::TestBeds
         VectorDbl _eigen_values;
         std::vector<VectorDbl> _eigen_vectors;
 
-        TestLinearSystemSymmetric(int n, const MML::MatrixSym<Real> &mat, const MML::VectorDbl &rhs, const MML::VectorDbl &sol, const MML::VectorDbl &eigen_values) : 
+        TestLinearSystemSymmetric(int n, const NRS::MatrixSym<Real> &mat, const NRS::VectorDbl &rhs, const NRS::VectorDbl &sol, const NRS::VectorDbl &eigen_values) : 
             _n(n), _mat(mat), _rhs(rhs), _sol(sol), _eigen_values(eigen_values)
         {}
-        TestLinearSystemSymmetric(int n, const MML::MatrixSym<Real> &mat, const MML::VectorDbl &rhs, const MML::VectorDbl &sol, const MML::VectorDbl &eigen_values, const std::vector<MML::VectorDbl> &eigen_vectors) : 
+        TestLinearSystemSymmetric(int n, const NRS::MatrixSym<Real> &mat, const NRS::VectorDbl &rhs, const NRS::VectorDbl &sol, const NRS::VectorDbl &eigen_values, const std::vector<NRS::VectorDbl> &eigen_vectors) : 
             _n(n), _mat(mat), _rhs(rhs), _sol(sol), _eigen_values(eigen_values), _eigen_vectors(eigen_vectors)
         {}        
     };

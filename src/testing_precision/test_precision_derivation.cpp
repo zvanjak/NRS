@@ -1,5 +1,5 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/Function.h"
 #include "core/Derivation.h"
@@ -9,8 +9,8 @@
 #include "../test_data/scalar_functions_test_bed.h"
 #include "../test_data/vector_functions_test_bed.h"
 
-using namespace MML;
-using namespace MML::TestBeds;
+using namespace NRS;
+using namespace NRS::TestBeds;
 
 // For given RealFunction
 // and given interval of test points
@@ -45,11 +45,11 @@ void NDer_Error_Order_Diff_Der_Orders_Single_Func(std::string funcName, const Te
 
             switch(ord)
             {
-                case 1: num_der = MML::Derivation::NDer1(f, x); break;
-                case 2: num_der = MML::Derivation::NDer2(f, x); break;
-                case 4: num_der = MML::Derivation::NDer4(f, x); break;
-                case 6: num_der = MML::Derivation::NDer6(f, x); break;
-                case 8: num_der = MML::Derivation::NDer8(f, x); break;
+                case 1: num_der = NRS::Derivation::NDer1(f, x); break;
+                case 2: num_der = NRS::Derivation::NDer2(f, x); break;
+                case 4: num_der = NRS::Derivation::NDer4(f, x); break;
+                case 6: num_der = NRS::Derivation::NDer6(f, x); break;
+                case 8: num_der = NRS::Derivation::NDer8(f, x); break;
                 default: std::cout << "Wrong order" << std::endl;
             }
             
@@ -99,11 +99,11 @@ void NSecDer_Error_Order_Diff_Der_Orders_Single_Func(std::string funcName, const
 
             switch(ord)
             {
-                case 1: num_der = MML::Derivation::NSecDer1(f, x); break;
-                case 2: num_der = MML::Derivation::NSecDer2(f, x); break;
-                case 4: num_der = MML::Derivation::NSecDer4(f, x); break;
-                case 6: num_der = MML::Derivation::NSecDer6(f, x); break;
-                case 8: num_der = MML::Derivation::NSecDer8(f, x); break;
+                case 1: num_der = NRS::Derivation::NSecDer1(f, x); break;
+                case 2: num_der = NRS::Derivation::NSecDer2(f, x); break;
+                case 4: num_der = NRS::Derivation::NSecDer4(f, x); break;
+                case 6: num_der = NRS::Derivation::NSecDer6(f, x); break;
+                case 8: num_der = NRS::Derivation::NSecDer8(f, x); break;
                 default: std::cout << "Wrong order" << std::endl;
             }
             
@@ -142,11 +142,11 @@ void NDer_Average_Error_Diff_Orders_Single_Func(std::string funcName, const Test
 
         double exact_der = f_der(x);
 
-        double num_der1 = MML::Derivation::NDer1(f, x);
-        double num_der2 = MML::Derivation::NDer2(f, x);
-        double num_der4 = MML::Derivation::NDer4(f, x);
-        double num_der6 = MML::Derivation::NDer6(f, x);
-        double num_der8 = MML::Derivation::NDer8(f, x);
+        double num_der1 = NRS::Derivation::NDer1(f, x);
+        double num_der2 = NRS::Derivation::NDer2(f, x);
+        double num_der4 = NRS::Derivation::NDer4(f, x);
+        double num_der6 = NRS::Derivation::NDer6(f, x);
+        double num_der8 = NRS::Derivation::NDer8(f, x);
 
         double err1 = num_der1 - exact_der;
         double err2 = num_der2 - exact_der;
@@ -216,11 +216,11 @@ void NDer_Error_Diff_h_Single_Func(int order, std::string funcName, const TestFu
 
             switch(order)
             {
-                case 1: num_der = MML::Derivation::NDer1(f, x, h); break;
-                case 2: num_der = MML::Derivation::NDer2(f, x, h); break;
-                case 4: num_der = MML::Derivation::NDer4(f, x, h); break;
-                case 6: num_der = MML::Derivation::NDer6(f, x, h); break;
-                case 8: num_der = MML::Derivation::NDer8(f, x, h); break;
+                case 1: num_der = NRS::Derivation::NDer1(f, x, h); break;
+                case 2: num_der = NRS::Derivation::NDer2(f, x, h); break;
+                case 4: num_der = NRS::Derivation::NDer4(f, x, h); break;
+                case 6: num_der = NRS::Derivation::NDer6(f, x, h); break;
+                case 8: num_der = NRS::Derivation::NDer8(f, x, h); break;
                 default: std::cout << "Wrong order" << std::endl;
             }
             double err = num_der - exact_der;
@@ -251,8 +251,8 @@ void NDer_Error_Diff_Orders_Multi_Func_comparison()
 
 void Demo_Second_derivation()
 {
-    MML::RealFunction g{[](Real x) { return sin(x); } };
-    MML::RealFunction g_sec_der{[](Real x) { return -sin(x); } };
+    NRS::RealFunction g{[](Real x) { return sin(x); } };
+    NRS::RealFunction g_sec_der{[](Real x) { return -sin(x); } };
 
     for( double h=1e-4; h>=1e-10; h/=10.0 )
     {
@@ -262,7 +262,7 @@ void Demo_Second_derivation()
         std::cout << "-----------------------------------------------------------" << std::endl;
         for( double x=0; x<=3.0; x+=0.5)
         {
-            double num_der = MML::Derivation::NSecDer1(g, x, h);
+            double num_der = NRS::Derivation::NSecDer1(g, x, h);
             double err = num_der - g_sec_der(x);
             std::cout << std::setw(10) << std::setprecision(7) << x << "  " 
                       << std::setw(15) << std::setprecision(10) << num_der << "   " 
@@ -277,8 +277,8 @@ void Demo_Second_derivation()
 
 void Demo_Third_derivation()
 {
-    MML::RealFunction g{[](Real x) { return sin(x); } };
-    MML::RealFunction g_third_der{[](Real x) { return -cos(x); } };
+    NRS::RealFunction g{[](Real x) { return sin(x); } };
+    NRS::RealFunction g_third_der{[](Real x) { return -cos(x); } };
 
     for( double h=1e-4; h>=1e-6; h/=10.0 )
     {
@@ -288,7 +288,7 @@ void Demo_Third_derivation()
         std::cout << "-----------------------------------------------------------" << std::endl;
         for( double x=0; x<=3.0; x+=0.5)
         {
-            double num_der = MML::Derivation::NThirdDer1(g, x, h);
+            double num_der = NRS::Derivation::NThirdDer1(g, x, h);
             double err = num_der - g_third_der(x);
             std::cout << std::setw(10) << std::setprecision(7) << x << "  " 
                       << std::setw(15) << std::setprecision(10) << num_der << "   " 

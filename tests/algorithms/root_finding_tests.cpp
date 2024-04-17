@@ -1,12 +1,12 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "algorithms/RootFinding.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - HIGH, EMPTY!!! - implement these tests
 TEST_CASE("Test_Root_finding_multidim", "[simple]") {

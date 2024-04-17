@@ -15,13 +15,13 @@ void Main_Docs_Examples()
 {
 	//Example_Main();
 
-	Example1_kosi_hitac();
-	Example2_collision_calculator();
-	Example3_tensor_of_inertia();
-	Example4_Gravity_field_visualization();
-	Example5_Voyager_travels();
+	//Example1_kosi_hitac();
+	//Example2_collision_calculator();
+	//Example3_tensor_of_inertia();
+	//Example4_Gravity_field_visualization();
+	//Example5_Voyager_travels();
 	Example6_electric_charge_distribution();
-	Example7_Covariant_derivative();
-	Example8_EM_field_investigations();
-	Example9_Thermodynamics_simulator();
+	//Example7_Covariant_derivative();
+	//Example8_EM_field_investigations();
+	//Example9_Thermodynamics_simulator();
 }

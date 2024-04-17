@@ -1,15 +1,15 @@
-#if !defined __MML_VECTOR_FUNCTIONS_TEST_BED_H
-#define __MML_VECTOR_FUNCTIONS_TEST_BED_H
+#if !defined __NRS_VECTOR_FUNCTIONS_TEST_BED_H
+#define __NRS_VECTOR_FUNCTIONS_TEST_BED_H
 
 #include <string>
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/Function.h"
 #endif
 
-namespace MML::TestBeds
+namespace NRS::TestBeds
 {
     template<int N>
     struct TestFunctionVector
@@ -17,7 +17,7 @@ namespace MML::TestBeds
         std::string _funcName;
 
         VectorFunction<N> _func;
-        VectorN<Real, N> (*_funcDerived)(const MML::VectorN<Real, N> &, int ind);
+        VectorN<Real, N> (*_funcDerived)(const NRS::VectorN<Real, N> &, int ind);
 
         std::string _funcExpr;
         std::string _funcDerivedExpr;
@@ -32,7 +32,7 @@ namespace MML::TestBeds
         {}
     };    
 
-    static MML::VectorN<Real, 3> TestVectorFunc1(const VectorN<Real, 3> &xVal) 
+    static NRS::VectorN<Real, 3> TestVectorFunc1(const VectorN<Real, 3> &xVal) 
     {
         Real x = xVal[0];
         Real y = xVal[1];
@@ -44,7 +44,7 @@ namespace MML::TestBeds
 
         return VectorN<Real, 3>{valx, valy, valz};
     }
-    static MML::VectorN<Real, 3> TestVectorFunc1_derived(const VectorN<Real, 3> &xVal, int ind) 
+    static NRS::VectorN<Real, 3> TestVectorFunc1_derived(const VectorN<Real, 3> &xVal, int ind) 
     { 
         Real x = xVal[0];
         Real y = xVal[1];

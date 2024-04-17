@@ -1,12 +1,12 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Polynom.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 TEST_CASE("Test_Polynom_init_GetDegree_operator[]", "[simple]") {
 	RealPolynom poly_empty;
@@ -115,8 +115,10 @@ TEST_CASE("Test_Polynom_poldiv", "[simple]") {
 
 	RealPolynom::poldiv(p, p1, res, rem);
 
-	REQUIRE(p == res * p1 + rem);
-	REQUIRE(res == p2 * p3);
+	RealPolynom alb = res * p1 + rem;
+
+	REQUIRE(p.IsEqual(res * p1 + rem));
+	REQUIRE(res == (p2 * p3));
 
 	RealPolynom p_1({ 2.0, 0.0, 1.0 });
 	RealPolynom p_2({ -4.0, 1.0 });

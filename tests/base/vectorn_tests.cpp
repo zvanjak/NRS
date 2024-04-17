@@ -1,12 +1,12 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/VectorN.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 TEST_CASE("VectorN_default_ctor_init_to_zero", "[simple]") {
     VectorN<Real, 3> a;

@@ -1,12 +1,12 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/DiracDeltaFunction.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - HIGH, EMPTY!!! - dovršiti demo
 void Demo_Dirac_function()

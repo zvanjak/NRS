@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/Visualizer.h"
 #include "core/Serializer.h"
@@ -13,7 +13,7 @@
 
 #include "../test_data/diff_eq_systems_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 void Docs_Demo_ODE_solvers_5th_order()
 {

@@ -2,15 +2,15 @@
 
 #include <vector>
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Geometry.h"
 #include "base/Geometry2D.h"
 #include "base/Geometry3D.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - BIG!!! - add tests for all functions
 TEST_CASE("Test_Point2Cartesian", "[simple]") {

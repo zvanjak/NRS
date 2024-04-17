@@ -1,15 +1,15 @@
-# MML - Minimal Math Library
-All your basic (numerical) math needs, contained in a single-header file (more clickbaitish title would be Numerical Recipes on Steroids).
+# NRS - Numerical Recipes on Steroids
+All your basic (numerical) math needs, contained in a single-header file, using Numerical Recipes algorithms.
 
-## MML Vision
+## NRS Vision
 - For a C++ developer, on Windows, Mac or Linux
 - Who needs a math library to perform simple (and not so simple) numerical calculations 
-- The Minimal Math Library is a general purpose, pythonesque in its focus on simplicity of use, single-header C++ library of classes and functions
+- The Numerical Recipes on Steroids is a general purpose, pythonesque in its focus on simplicity of use, single-header C++ library of classes and functions
 - That is trivial to use in any kind of project, is C++ 20 cross-platform compatible, and comes with a rich set of functionalities for working with vectors, matrices, tensors, linear systems, polynoms, real, scalar and vector functions, coordinate systems and their transformations, 2D & 3D geometry with algorithms for derivation, integration, interpolation, differential equations solving, root finding, statistics, and more.
 
 ## Basic facts
 - As of now, and for foreseable future, this is unfortunately strictly for personal, research and educational use only (see Licensing at the end)
-- Single-header  - get MML.h, include in your project and go 
+- Single-header  - get NRS.h, include in your project and go 
 - Cross-platform - tested with Visual Studio Code on Windows (MSVC++, clang), Mac (gcc, clang), Linux (gcc)
 - C++20 standard - but can easily be adapted to C++17, C++14
 - Pythonesque in its focus on simplicity of use, and focused on faithful modeling of mathematical entities (while trying as much as possible to retain C++ computational efficiency)
@@ -41,7 +41,7 @@ Basic math types. These are the building blocks of the library, sitting at the l
 
 **Core**
 
-Core mathematical objects and operations of the library, depending on Base types, and used by MML algorithms.
+Core mathematical objects and operations of the library, depending on Base types, and used by NRS algorithms.
 Function objects, and different algorithms for working with them are the heart of this layer.
 - [Linear alg. equations solvers](/docs/core/Linear_equations_solvers.md) - GJ, LU, QR, SVD, Cholesky
 - [Functions](/docs/core/Functions.md) - IRealFunction, IScalarFunction<int N>, IVectorFunction<int N>, IParametricCurve<N>, IParametricSurface<N>, ITensorField<N>
@@ -123,7 +123,7 @@ EM_field.AddLine(200.0, Line3D(Point3Cartesian(-150, 100, 0), Vector3Cartesian(0
 EM_field.AddLine(200.0, Line3D(Point3Cartesian(20, -100, 00), Vector3Cartesian(1, 0, 0)));
 
 EM_field.Serialize3DCartesian(-300.0, 300.0, 30, -300.0, 300.0, 30, -300.0, 300.0, 30, "EM_field.txt", 3.0);
-std::system("..\\..\\tools\\visualizers\\vector_field_visualizer\\MML_VectorFieldVisualizer.exe EM_field.txt");
+std::system("..\\..\\tools\\visualizers\\vector_field_visualizer\\NRS_VectorFieldVisualizer.exe EM_field.txt");
 ~~~
 ![My Image](docs/images/readme_MainExample_EM_field.png)
 
@@ -155,7 +155,7 @@ MatrixComplex   mat_cmplx(2,2, { Complex(0.5,1), Complex(-1,2),
                                  Complex(-1,-2), Complex(-2,2) });
 MatrixComplex   mat_cmplx2(2,3, { Complex(1,2),    Complex(-1,1), Complex(1.5,-2), 
                                   Complex(2,-0.5), Complex(3,-2), Complex(-1,1) });
-Matrix<double>  unit_mat3 = MML::Matrix<Real>::GetUnitMatrix(3);
+Matrix<double>  unit_mat3 = NRS::Matrix<Real>::GetUnitMatrix(3);
 
 Vector<double> v_real  = 2.0 * (vec1 + vec2) * mat_3x3 / vec1.NormL2();
 VectorComplex  v_cmplx = vec_cmplx1 * mat_cmplx / Complex(1.5, -1.5) / 2.0;
@@ -326,7 +326,7 @@ f_polynom.SerializeEquallySpacedDetailed(x1, x2, 100, "..\\..\\results\\readme_i
 f_spline.SerializeEquallySpacedDetailed(x1, x2, 100, "..\\..\\results\\readme_interp_spline_5_pnt.txt");
 f_baryrat.SerializeEquallySpacedDetailed(x1, x2, 100, "..\\..\\results\\readme_interp_baryrat_5_pnt.txt");
 
-const char *cmd = "..\\..\\tools\\visualizers\\real_function_visualizer\\MML_RealFunctionVisualizer.exe"
+const char *cmd = "..\\..\\tools\\visualizers\\real_function_visualizer\\NRS_RealFunctionVisualizer.exe"
                     " ..\\..\\results\\readme_interp_test_func.txt"
                     " ..\\..\\results\\readme_interp_linear_5_pnt.txt"
                     " ..\\..\\results\\readme_interp_polynom_5_pnt.txt"
@@ -399,11 +399,11 @@ Testing precision of numerical derivation
 
     double exact_der = f_der(x);
 
-    double num_der1 = MML::Derivation::NDer1(f, x);
-    double num_der2 = MML::Derivation::NDer2(f, x);
-    double num_der4 = MML::Derivation::NDer4(f, x);
-    double num_der6 = MML::Derivation::NDer6(f, x);
-    double num_der8 = MML::Derivation::NDer8(f, x);
+    double num_der1 = NRS::Derivation::NDer1(f, x);
+    double num_der2 = NRS::Derivation::NDer2(f, x);
+    double num_der4 = NRS::Derivation::NDer4(f, x);
+    double num_der6 = NRS::Derivation::NDer6(f, x);
+    double num_der8 = NRS::Derivation::NDer8(f, x);
 
     double err1 = num_der1 - exact_der;
     double err2 = num_der2 - exact_der;
@@ -533,9 +533,9 @@ for (int i = 1; i < numIntervals; i++) {
 
   double integral = f_int(x) - f_int(x1);
 
-  double int_trap = MML::IntegrateTrap(f, x1, x, 1e-3);
-  double int_simp = MML::IntegrateSimpson(f, x1, x, 1e-3);
-  double int_romb = MML::IntegrateRomberg(f, x1, x);
+  double int_trap = NRS::IntegrateTrap(f, x1, x, 1e-3);
+  double int_simp = NRS::IntegrateSimpson(f, x1, x, 1e-3);
+  double int_romb = NRS::IntegrateRomberg(f, x1, x);
 
   double err1 = int_trap - integral;
   double err2 = int_simp - integral;

@@ -1,5 +1,5 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/Function.h"
 #include "core/Integration.h"
@@ -9,7 +9,7 @@
 #include "../test_data/scalar_functions_test_bed.h"
 #include "../test_data/vector_functions_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 void Test_Precision_Integration_Single_Func()
 {
@@ -35,9 +35,9 @@ void Test_Precision_Integration_Single_Func()
 
 		double integral = f_int(x) - f_int(x1);
 
-		double int_trap = MML::IntegrateTrap(f, x1, x, 1e-3);
-		double int_simp = MML::IntegrateSimpson(f, x1, x, 1e-3);
-		double int_romb = MML::IntegrateRomberg(f, x1, x);
+		double int_trap = NRS::IntegrateTrap(f, x1, x, 1e-3);
+		double int_simp = NRS::IntegrateSimpson(f, x1, x, 1e-3);
+		double int_romb = NRS::IntegrateRomberg(f, x1, x);
 
 		double err1 = int_trap - integral;
 		double err2 = int_simp - integral;

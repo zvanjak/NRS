@@ -1,7 +1,7 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Tensor.h"
 
@@ -11,7 +11,7 @@
 #include "base/Geometry3D.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO 0.9 - HIGH, BIG!!! verify that generating tensor from transf works
 TEST_CASE("Test_Metric_Tensors", "[simple]") {

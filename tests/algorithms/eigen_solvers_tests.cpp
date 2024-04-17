@@ -1,7 +1,7 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Vector.h"
 #include "base/Matrix.h"
@@ -15,7 +15,7 @@
 
 #include "../test_data/linear_alg_eq_systems_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 //////////////////////////////////////////////////////////////////////////////////////
 TEST_CASE("Test_Symmetric_Matrix_Eigen_solver 3 x 3", "[simple]")

@@ -1,13 +1,15 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/Function.h"
+#include "core/Curves.h"
+
 #include "algorithms/PathIntegration.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 
 void Docs_Demo_Calc_curve_length()
@@ -37,6 +39,16 @@ void Docs_Demo_Calc_work_integral()
   {
     std::cout << "Work integral for phi : " << phi << " is : " << PathIntegration::WorkIntegral(potential, circle, 0, phi, 1e-03) << std::endl;
   }
+
+  Curves3D::LineCurve line(-1.0, 11.0, Point3Cartesian{1, 0, 1}, VectorN<Real, 3>{1, 1, 1});
+
+  Real t1 = 0.0;
+  Real t2 = 10.0;
+  std::cout << "Work integral for line is : " << PathIntegration::WorkIntegral(potential, line, 0, 10.0, 1e-04) << std::endl;
+  std::cout << "Potential at t1: " << potential(line(t1)) << std::endl;
+  std::cout << "Potential at t2: " << potential(line(t2)) << std::endl;
+  std::cout << "Potential difference: " << potential(line(t2)) - potential(line(t1)) << std::endl;
+
 }
 
 void Docs_Demo_Integration_path()

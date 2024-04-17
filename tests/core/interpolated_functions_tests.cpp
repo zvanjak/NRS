@@ -1,19 +1,19 @@
-#if !defined __MML_INTERPOLATED_FUNCTIONS_H
-#define __MML_INTERPOLATED_FUNCTIONS_H
+#if !defined __NRS_INTERPOLATED_FUNCTIONS_H
+#define __NRS_INTERPOLATED_FUNCTIONS_H
 
 #include "../catch/catch.hpp"
 
 #include <vector>
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/InterpolatedFunction.h"
 
 #include "algorithms/FunctionAnalyzers.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 namespace Tests
 {
@@ -25,8 +25,8 @@ double test_func(const double x)
 
 void CreateInterpolatedValues(RealFunction f, Real x1, Real x2, int numPnt, Vector<Real> &outX, Vector<Real> &outY)
 {
-    outX.Resize(numPnt);
-    outY.Resize(numPnt);
+    outX.resize(numPnt);
+    outY.resize(numPnt);
 
     for (int i=0;i<numPnt;i++) {
         outX[i] = x1 + i * (x2 - x1) / (numPnt - 1);

@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "interfaces/IODESystem.h"
 
@@ -16,7 +16,7 @@
 #endif
 
 
-using namespace MML;
+using namespace NRS;
 
 class GravityMass
 {

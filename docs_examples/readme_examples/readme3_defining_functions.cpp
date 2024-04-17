@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Vector.h"
 #include "base/Matrix.h"
@@ -16,7 +16,7 @@
 #include "../test_data/vector_functions_test_bed.h"
 #include "../test_data/parametric_curves_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 /////////////////////////////////////////////////////////////////////////////////////
 // CASE 1 - standalone function providing calculation of a function
@@ -124,7 +124,7 @@ void Readme_defining_functions_case_5_usage()
     Serializer::SaveRealFuncEquallySpacedDetailed, (x1, x2, 100, "..\\..\\results\\readme_interp_spline_5_pnt.txt");
     Serializer::SaveRealFuncEquallySpacedDetailed(f_baryrat, "readme_interp_baryrat_5_pnt", x1, x2, 100, "..\\..\\results\\readme_interp_baryrat_5_pnt.txt");
 
-    const char *cmd = "..\\..\\tools\\visualizers\\real_function_visualizer\\MML_RealFunctionVisualizer.exe"
+    const char *cmd = "..\\..\\tools\\visualizers\\real_function_visualizer\\NRS_RealFunctionVisualizer.exe"
                         " ..\\..\\results\\readme_interp_test_func.txt"
                         " ..\\..\\results\\readme_interp_linear_5_pnt.txt"
                         " ..\\..\\results\\readme_interp_polynom_5_pnt.txt"

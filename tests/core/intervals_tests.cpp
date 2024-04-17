@@ -1,12 +1,12 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Intervals.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 TEST_CASE("Test_OpenInterval", "[simple]") {
     OpenInterval int1(0.0, 1.0); 

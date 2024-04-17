@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/VectorN.h"
 #include "core/Function.h"
@@ -10,7 +10,7 @@
 #include "core/Fields.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 Real MyPotentialCart(const VectorN<Real, 3> &x )   { return x[0]*x[1]; }
 

@@ -1,14 +1,14 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/CoordTransf.h"
 #include "core/Fields.h"
 #include "core/FieldOperations.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - HIGH!!! Test coord transf
 // make sure it is clear what convention is used

@@ -1,14 +1,14 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/CoreUtils.h"
 #endif
 
 #include "../test_data/linear_alg_eq_systems_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 // TODO 0.9 - HIGH - finish these tests
 TEST_CASE("Test MatrixUtils::IsOrthogonal")

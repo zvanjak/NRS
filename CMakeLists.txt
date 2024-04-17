@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 3.20.0)
 
 set (CMAKE_CXX_STANDARD 20)
 
-project(MML_Demo VERSION 1.0)
+project(NRS_Demo VERSION 1.0)
 
-add_compile_definitions(MML_USE_SINGLE_HEADER)
+add_compile_definitions(NRS_USE_SINGLE_HEADER)
 
-set( MML_DEMO_SOURCES   src/demo_app_main.cpp 
+set( NRS_DEMO_SOURCES   src/demo_app_main.cpp 
 
                         src/base/demo_algebra.cpp
                         src/base/demo_baseutils.cpp
@@ -83,12 +83,12 @@ set( MML_DEMO_SOURCES   src/demo_app_main.cpp
                       )
 
 
-add_executable(MML_Demo ${MML_DEMO_SOURCES})
-target_include_directories(MML_Demo PRIVATE include)
+add_executable(NRS_Demo ${NRS_DEMO_SOURCES})
+target_include_directories(NRS_Demo PRIVATE include)
 
 
 project(DocsApp VERSION 1.0)
-set(MML_DOCS_APP_SOURCES    docs_examples/docs_app_main.cpp
+set(NRS_DOCS_APP_SOURCES    docs_examples/docs_app_main.cpp
 
                             docs_examples/readme_examples/readme1_vectors_matrices.cpp
                             docs_examples/readme_examples/readme2_lin_alg_solvers.cpp
@@ -125,6 +125,7 @@ set(MML_DOCS_APP_SOURCES    docs_examples/docs_app_main.cpp
                             docs_examples/demos/docs_demo_integration_multidim.cpp
                             docs_examples/demos/docs_demo_integration_path.cpp
                             docs_examples/demos/docs_demo_integration_surface.cpp
+                            docs_examples/demos/docs_demo_integration_volume.cpp
                             docs_examples/demos/docs_demo_interpolated_functions.cpp
                             docs_examples/demos/docs_demo_geometry_2d_3d.cpp
                             docs_examples/demos/docs_demo_lin_alg_solvers.cpp
@@ -133,15 +134,13 @@ set(MML_DOCS_APP_SOURCES    docs_examples/docs_app_main.cpp
                             docs_examples/demos/docs_demo_ode_solvers.cpp
                             docs_examples/demos/docs_demo_polynom.cpp
                             docs_examples/demos/docs_demo_root_finding.cpp
-                            docs_examples/demos/docs_demo_surface_integration.cpp
                             docs_examples/demos/docs_demo_tensors.cpp
                             docs_examples/demos/docs_demo_vector.cpp
                             docs_examples/demos/docs_demo_visualizers.cpp
-                            docs_examples/demos/docs_demo_volume_integration.cpp
                             
                             docs_examples/demos/main_docs_demos.cpp
 )
-add_executable(DocsApp ${MML_DOCS_APP_SOURCES})
+add_executable(DocsApp ${NRS_DOCS_APP_SOURCES})
 target_include_directories(DocsApp PRIVATE include)
 
 
@@ -149,7 +148,7 @@ set(CATCH_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/catch)
 add_library(Catch INTERFACE)
 target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
 
-file(GLOB MML_TESTS tests/base/algebra_tests.cpp
+file(GLOB NRS_TESTS tests/base/algebra_tests.cpp
 
                     tests/base/baseutils_tests.cpp
                     tests/base/geometry_tests.cpp
@@ -193,6 +192,6 @@ file(GLOB MML_TESTS tests/base/algebra_tests.cpp
                     tests/precision/integration_precision_tests.cpp 
 )
 
-add_executable(MML_Tests "tests/mml_test_runner.cpp" ${MML_TESTS} )
-target_link_libraries(MML_Tests Catch)
-target_include_directories(MML_Tests PRIVATE include)
+add_executable(NRS_Tests "tests/mml_test_runner.cpp" ${NRS_TESTS} )
+target_link_libraries(NRS_Tests Catch)
+target_include_directories(NRS_Tests PRIVATE include)

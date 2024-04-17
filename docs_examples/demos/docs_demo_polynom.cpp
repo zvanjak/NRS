@@ -1,12 +1,12 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Polynom.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 void Docs_Demo_Polynom()
 {
@@ -22,8 +22,7 @@ void Docs_Demo_Polynom()
 	RealPolynom pol_quartic({ 1, 2, 3, 4, 5 });
 
 	RealPolynom    poly_real({ -1, 0.25, 1.3, -2, 0.4 });
-	ComplexPolynom poly_cmplx_r({ 1, 2, 3, 4 });
-	ComplexPolynom poly_cmplx({ Complex(0.5,-1), Complex(-2,3) });
+	ComplexPolynom poly_cmplx({ 1, 2, 3, 4 });
 	Matrix2Polynom poly_mat({ 1, -1.0/2, 1./6 });            // matrix polynomial of 3rd order
 
 	// Basic output of polynomials
@@ -33,7 +32,6 @@ void Docs_Demo_Polynom()
 	std::cout << "pol_cubic     : " << pol_cubic << std::endl;
 	std::cout << "pol_quartic   : " << pol_quartic << std::endl;
 	std::cout << "poly_real     : " << poly_real << std::endl;
-	std::cout << "poly_cmplx_r  : " << poly_cmplx_r << std::endl;
 	std::cout << "poly_cmplx    : " << poly_cmplx << std::endl;
 	std::cout << "m2            : " << poly_mat << std::endl << std::endl;
 
@@ -55,14 +53,14 @@ void Docs_Demo_Polynom()
 
 	// Operations on polynomials
 	RealPolynom pol_sum = pol_quadratic + pol_cubic;
-	std::cout << "( " << pol_quadratic << " )  +  ( " << pol_cubic << " ) = " << pol_sum << std::endl;
+	std::cout << "( " << pol_quadratic << " )  +  ( " << pol_cubic << " )  =  " << pol_sum << std::endl;
 	RealPolynom pol_diff = pol_quadratic - pol_cubic;
-	std::cout << "( " << pol_quadratic << " )  -  ( " << pol_cubic << " ) = " << pol_diff << std::endl;
+	std::cout << "( " << pol_quadratic << " )  -  ( " << pol_cubic << " )  =  " << pol_diff << std::endl;
 	RealPolynom pol_prod = pol_quadratic * pol_cubic;
-	std::cout << "( " << pol_quadratic << " )  *  ( " << pol_cubic << " ) = " << pol_prod << std::endl;
+	std::cout << "( " << pol_quadratic << " )  *  ( " << pol_cubic << " )  =  " << pol_prod << std::endl;
 	RealPolynom pol_div, pol_rem;
 	RealPolynom::poldiv(pol_prod, pol_cubic, pol_div, pol_rem);
-	std::cout << "( " << pol_prod << " )  /  ( " << pol_cubic << " ) = " << pol_div << "  remainder: " << pol_rem << std::endl;
+	std::cout << "( " << pol_prod << " )  /  ( " << pol_cubic << " )  =  " << pol_div << "  remainder: " << pol_rem << std::endl;
 
 	RealPolynom pol_sum2 = pol_quadratic * 2.0;
 	RealPolynom pol_diff2 = pol_quadratic / 2.0;
@@ -104,7 +102,8 @@ poly_mat({ 1, 0.5, -1.4, 2.8 }) = Rows: 2  Cols: 2
 
 ( 3 * x^2 + 2 * x1 + 1 )  +  ( 4 * x^3 + 3 * x^2 + 2 * x1 + 1 ) = 4 * x^3 + 6 * x^2 + 4 * x1 + 2
 ( 3 * x^2 + 2 * x1 + 1 )  -  ( 4 * x^3 + 3 * x^2 + 2 * x1 + 1 ) = -4 * x^3
-( 3 * x^2 + 2 * x1 + 1 )  *  ( 4 * x^3 + 3 * x^2 + 2 * x1 + 1 ) = 12 * x^5 + 17 * x^4 + 16 * x^3 + 10 * x^2 + 4 * x1 + 1( 12 * x^5 + 17 * x^4 + 16 * x^3 + 10 * x^2 + 4 * x1 + 1 )  /  ( 4 * x^3 + 3 * x^2 + 2 * x1 + 1 ) = 2 * x1 + 1  remainder:
+( 3 * x^2 + 2 * x1 + 1 )  *  ( 4 * x^3 + 3 * x^2 + 2 * x1 + 1 ) = 12 * x^5 + 17 * x^4 + 16 * x^3 + 10 * x^2 + 4 * x1 + 1
+( 12 * x^5 + 17 * x^4 + 16 * x^3 + 10 * x^2 + 4 * x1 + 1 )  /  ( 4 * x^3 + 3 * x^2 + 2 * x1 + 1 ) = 2 * x1 + 1  remainder:
 
 Real coef. polynom output:
 0.4 * x^4 + -2 * x^3 + 1.3 * x^2 + 0.25 * x1 + -1

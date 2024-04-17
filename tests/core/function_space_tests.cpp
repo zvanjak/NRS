@@ -1,12 +1,12 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/FunctionSpace.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 
 // TODO - HIGH, EMPTY!!! Test function space

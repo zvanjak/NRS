@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/Function.h"
 #include "core/Curves.h"
@@ -11,7 +11,7 @@
 
 #include "../test_data/parametric_curves_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 void Readme_parametric_curves()
 {

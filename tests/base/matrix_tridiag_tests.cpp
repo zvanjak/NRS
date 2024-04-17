@@ -1,7 +1,7 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Vector.h"
 #include "base/MatrixBandDiag.h"
@@ -9,16 +9,16 @@
 #include "core/LinAlgEqSolvers.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 
 // TODO 0.9 - Tridiag tests
-namespace MML::Tests::TridiagMatrixTests
+namespace NRS::Tests::TridiagMatrixTests
 {
     TEST_CASE("MatrixTridiag_init_from_3_vectors", "[simple]") 
     {
         // initializing with 3 vectors
-        TridiagonalMatrix<Real> a(4, {0.0, 4.5, 9.0, 10.0}, {4.0, 1.5, 6.0, 7.0}, {1.0, 2.0, 3.0, 0.0}  );
+        TridiagonalMatrix<Real> a(4, Vector<Real>{0.0, 4.5, 9.0, 10.0}, Vector<Real>{4.0, 1.5, 6.0, 7.0}, Vector<Real>{1.0, 2.0, 3.0, 0.0}  );
 
         // expected matrix
         Matrix<Real> b(4, 4, {  4.0, 1.0, 0.0, 0.0,

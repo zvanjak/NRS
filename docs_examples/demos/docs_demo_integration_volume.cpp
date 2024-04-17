@@ -1,15 +1,15 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "algorithms/VolumeIntegration.h"
 #endif
 
 using namespace std;
-using namespace MML;
+using namespace NRS;
 
-void Docs_Demo_Volume_integration()
+void Docs_Demo_Integration_volume()
 {
     std::cout << endl;
     std::cout << "***********************************************************************" << endl;

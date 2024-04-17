@@ -1,12 +1,12 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/BaseUtils.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO 0.9 - LOW - finish these tests
 TEST_CASE("Test Abs")

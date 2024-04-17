@@ -1,15 +1,15 @@
-#if !defined __MML_SCALAR_FUNCTIONS_TEST_BED_H
-#define __MML_SCALAR_FUNCTIONS_TEST_BED_H
+#if !defined __NRS_SCALAR_FUNCTIONS_TEST_BED_H
+#define __NRS_SCALAR_FUNCTIONS_TEST_BED_H
 
 #include <string>
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/Function.h"
 #endif
 
-namespace MML::TestBeds
+namespace NRS::TestBeds
 {
     template<int N>
     struct TestFunctionScalar
@@ -80,7 +80,6 @@ namespace MML::TestBeds
             // d/dz((sin(x y) exp(z/(y y + 1)))/(1 + x x)) = (e^(z/(y^2 + 1)) sin(x y))/((x^2 + 1) (y^2 + 1))
               TestScalarFunc2_derived, "(e^(z/(y^2 + 1)) ((x^2 + 1) y cos(x y) - 2 x sin(x y)))/(x^2 + 1)^2; (e^(z/(y^2 + 1)) (x (y^2 + 1)^2 cos(x y) - 2 y z sin(x y)))/((x^2 + 1) (y^2 + 1)^2); (e^(z/(y^2 + 1)) sin(x y))/((x^2 + 1) (y^2 + 1))" }               
         };
-        
     };
 }
 

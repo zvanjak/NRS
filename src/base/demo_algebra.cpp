@@ -1,13 +1,13 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Algebra.h"
 
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - demo of Z6 group, with its multiplication table
 // TODO - demo of permutation group and its operations

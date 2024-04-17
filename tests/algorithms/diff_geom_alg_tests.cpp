@@ -1,7 +1,7 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/VectorN.h"
 #include "base/Geometry3D.h"
@@ -15,7 +15,7 @@
 
 #include "../test_data/parametric_curves_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - HIGH, EMPTY!!! - implement these tests
 // za krivulje iz test beda u točkama verificirati preciznost izračuna tangente, normale, binormale, vektora krivine, krivine

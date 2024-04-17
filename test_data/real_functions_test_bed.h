@@ -1,10 +1,10 @@
-#if !defined __MML_REAL_FUNCTIONS_TEST_BED_H
-#define __MML_REAL_FUNCTIONS_TEST_BED_H
+#if !defined __NRS_REAL_FUNCTIONS_TEST_BED_H
+#define __NRS_REAL_FUNCTIONS_TEST_BED_H
 
 #include <string>
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/StdFunctions.h"
 
@@ -13,9 +13,9 @@
 #include "core/Function.h"
 #endif
 
-using namespace MML::Functions;
+using namespace NRS::Functions;
 
-namespace MML::TestBeds
+namespace NRS::TestBeds
 {
     struct TestFunctionReal
     {
@@ -24,11 +24,11 @@ namespace MML::TestBeds
         std::shared_ptr<IInterval> _intervalDef;
         std::shared_ptr<IInterval> _intervalTest;
 
-        MML::RealFunction _func;
-        MML::RealFunction _funcDerived;
-        MML::RealFunction _funcSecDer;
-        MML::RealFunction _funcThirdDer;
-        MML::RealFunction _funcIntegrated;
+        NRS::RealFunction _func;
+        NRS::RealFunction _funcDerived;
+        NRS::RealFunction _funcSecDer;
+        NRS::RealFunction _funcThirdDer;
+        NRS::RealFunction _funcIntegrated;
 
         std::string _funcExpr;
         std::string _funcDerivedExpr;
@@ -81,8 +81,8 @@ namespace MML::TestBeds
         std::shared_ptr<IInterval> _intervalDef;
         std::shared_ptr<IInterval> _intervalTest;        
 
-        MML::RealFunction _func;
-        MML::RealFunction _funcDerived;
+        NRS::RealFunction _func;
+        NRS::RealFunction _funcDerived;
 
         std::string _funcExpr;
         std::string _funcDerivedExpr;
@@ -114,8 +114,8 @@ namespace MML::TestBeds
         std::shared_ptr<IInterval> _intervalDef;
         std::shared_ptr<IInterval> _intervalTest;
 
-        MML::RealFunction _func;
-        MML::RealFunction _funcIntegrated;
+        NRS::RealFunction _func;
+        NRS::RealFunction _funcIntegrated;
 
         std::string _funcExpr;
         std::string _funcIntegratedExpr;
@@ -181,14 +181,14 @@ namespace MML::TestBeds
     private:
         const static inline TestFunctionReal _listFuncReal[] = { 
                 {"Sin", new CompleteRInterval(), 
-                        new ClosedInterval(-2.0*Constants::PI, 2.0 * MML::Constants::PI),  
+                        new ClosedInterval(-2.0*Constants::PI, 2.0 * NRS::Constants::PI),  
                         [](Real x) { return sin(x);},  "sin(x)", 
                         [](Real x) { return cos(x);},  "cos(x)",  
                         [](Real x) { return -sin(x);}, "-sin(x)",
                         [](Real x) { return -cos(x);}, "-cos(x)",
                         [](Real x) { return -cos(x);}, "-cos(x)"},
                 {"Cos", new CompleteRInterval(), 
-                        new ClosedInterval(-2.0*Constants::PI, 2.0 * MML::Constants::PI),  
+                        new ClosedInterval(-2.0*Constants::PI, 2.0 * NRS::Constants::PI),  
                         [](Real x) { return cos(x);}, "cos(x)", 
                         [](Real x) { return -sin(x);}, "-sin(x)", 
                         [](Real x) { return -cos(x);}, "-cos(x)", 

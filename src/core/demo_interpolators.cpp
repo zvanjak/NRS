@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Vector.h"
 #include "base/Matrix.h"
@@ -13,7 +13,7 @@
 #endif
 
 using namespace std;
-using namespace MML;
+using namespace NRS;
 
 
 void Test_Interpolation_2DFunc()

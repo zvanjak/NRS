@@ -1,16 +1,16 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Vector.h"
 #include "base/MatrixSym.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO 0.9 - finish details
-namespace MML::Tests::MatrixOtherTests
+namespace NRS::Tests::MatrixOtherTests
 {
 TEST_CASE("MatrixSym_default_ctor_init_to_zero", "[simple]") 
 {
@@ -140,4 +140,4 @@ TEST_CASE("MatrixSym_GetInverse", "[simple]")
 	REQUIRE(c.IsEqual(Matrix<Real>::GetUnitMatrix(2)));
 }
 
-} // namespace MML::Tests::MatrixOtherTests
+} // namespace NRS::Tests::MatrixOtherTests

@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Vector.h"
 #include "base/Matrix.h"
@@ -10,7 +10,7 @@
 
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 void Readme_vectors_matrices()
 {
@@ -29,7 +29,7 @@ void Readme_vectors_matrices()
                                      Complex(-1,-2), Complex(-2,2) });
     MatrixComplex   mat_cmplx2(2,3, { Complex(1,2),    Complex(-1,1), Complex(1.5,-2), 
                                       Complex(2,-0.5), Complex(3,-2), Complex(-1,1) });
-    Matrix<Real>  unit_mat3 = MML::Matrix<Real>::GetUnitMatrix(3);
+    Matrix<Real>  unit_mat3 = NRS::Matrix<Real>::GetUnitMatrix(3);
 
     Vector<Real> v_real  = Real{2.0} * (vec1 + vec2) * mat_3x3 / vec1.NormL2();
     VectorComplex  v_cmplx = vec_cmplx1 * mat_cmplx / Complex(1.5, -1.5) / 2.0;

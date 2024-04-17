@@ -1,12 +1,12 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/MatrixNM.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 TEST_CASE("MatrixNM_default_ctor_init_to_zero", "[simple]") {
     MatrixNM<Real,2,2> a;

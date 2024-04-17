@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/StdFunctions.h"
 #include "base/VectorN.h"
@@ -11,7 +11,7 @@
 #include "core/Surfaces.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 Real Demo_Function_TestFunc(Real x) 
 { 

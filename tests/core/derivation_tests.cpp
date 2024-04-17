@@ -1,7 +1,7 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/Vector.h"
 #include "core/Function.h"
@@ -12,7 +12,7 @@
 #include "../test_data/scalar_functions_test_bed.h"
 #include "../test_data/vector_functions_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

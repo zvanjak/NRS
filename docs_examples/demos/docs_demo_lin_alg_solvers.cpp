@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/LinAlgEqSolvers.h"
 
@@ -10,7 +10,7 @@
 
 #include "../test_data/linear_alg_eq_systems_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 void Docs_Demo_LinAlgSolvers_GaussJordan()
 {

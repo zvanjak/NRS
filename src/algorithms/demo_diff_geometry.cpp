@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/VectorN.h"
 #include "core/Function.h"
@@ -16,7 +16,7 @@
 #include "../test_data/parametric_curves_test_bed.h"
 #include "../test_data/parametric_surfaces_test_bed.h"
 
-using namespace MML;
+using namespace NRS;
 
 void Demo_curves()
 {
@@ -63,7 +63,7 @@ void Demo_curves()
 
 void Demo_surfaces()
 {
-    //const ParametricCurve<3> &test_curve = MML::TestData::ParametricCurvesTestBed::getTestCurve(0)._curve;
+    //const ParametricCurve<3> &test_curve = NRS::TestData::ParametricCurvesTestBed::getTestCurve(0)._curve;
 
 }
 

@@ -1,12 +1,12 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "core/Surfaces.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - LOW, EMPTY!!! - Demo surfaces
 void Demo_Surfaces()

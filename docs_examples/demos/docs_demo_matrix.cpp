@@ -1,7 +1,7 @@
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
-#include "MMLBase.h"
+#include "NRSBase.h"
 
 #include "base/Matrix.h"
 #include "base/MatrixSym.h"
@@ -10,7 +10,7 @@
 #include "base/BaseUtils.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 
 void Docs_Demo_Matrix_initializations()
@@ -426,7 +426,7 @@ void Docs_Demo_Demo_Matrix_Tridiag()
   // [          0,          0,         10,          7,  ]
 
   // initializing with 3 vectors
-  TridiagonalMatrix<Real> a(4, { 0.0, 4.5, 9.0, 10.0 }, { 4.0, 1.5, 6.0, 7.0 }, { 1.0, 2.0, 3.0, 0.0 });
+  TridiagonalMatrix<Real> a(4, Vector<Real>{ 0.0, 4.5, 9.0, 10.0 }, Vector<Real>{ 4.0, 1.5, 6.0, 7.0 }, Vector<Real>{ 1.0, 2.0, 3.0, 0.0 });
 
   // initializing with values in single initializer list
   TridiagonalMatrix<Real> b(4, { 4.0, 1.0,

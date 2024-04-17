@@ -1,8 +1,8 @@
-#if !defined MML_PARAMETRIC_SURFACE_TEST_BED_H
-#define MML_PARAMETRIC_SURFACE_TEST_BED_H
+#if !defined NRS_PARAMETRIC_SURFACE_TEST_BED_H
+#define NRS_PARAMETRIC_SURFACE_TEST_BED_H
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "base/VectorN.h"
 #include "base/Matrix.h"
@@ -10,9 +10,9 @@
 #include "core/Function.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
-namespace MML::TestBeds
+namespace NRS::TestBeds
 {
     struct TestParametricSurface3
     {
@@ -21,7 +21,7 @@ namespace MML::TestBeds
         Real _x1, _x2;
         Real _y1, _y2;
 
-        MML::ParametricSurface<3> _surface;
+        NRS::ParametricSurface<3> _surface;
 
         TestParametricSurface3( std::string surfaceName, std::string surfaceExpr, Real x1, Real x2, Real y1, Real y2,
                                 VectorN<Real,3> (*f1)(Real, Real)

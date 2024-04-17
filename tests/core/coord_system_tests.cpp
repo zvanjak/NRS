@@ -1,11 +1,11 @@
 #include "../catch/catch.hpp"
 
-#ifdef MML_USE_SINGLE_HEADER
-#include "MML.h"
+#ifdef NRS_USE_SINGLE_HEADER
+#include "NRS.h"
 #else
 #include "core/CoordSystem.h"
 #endif
 
-using namespace MML;
+using namespace NRS;
 
 // TODO - LOW, EMPTY!!! Test coord system
